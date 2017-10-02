@@ -1,3 +1,6 @@
+
+this repo is still in draft
+
 We always try to ease the installation.
 
 We provide several docker images for you to run Gisgraphy easily. all this stuff is given "as is" and with any waranty of any kind.
