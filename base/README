@@ -1,0 +1,7 @@
+use build.sh to build the the docker image
+
+use run.sh to run the container from the image
+
+use connect.sh to open a bash into your container
+
+use install.sh to install gisgraphy (not in docker)

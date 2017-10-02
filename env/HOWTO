@@ -1,0 +1,6 @@
+docker build -t gisgraphyenv --build-arg PGPASSWORD=mdppostgres .
+
+docker run -td   gisgraphypro bash
+docker images=>DOCKERID
+docker exec -t -i DOCKERID /bin/bash
+
