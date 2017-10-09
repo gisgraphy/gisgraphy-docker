@@ -82,9 +82,17 @@ First add your dump files in the directory dump/assets/dump. then you got two ch
   ```
   ./exportandcompresscontainer.sh
   ```
+  
+  Then you can start a container based on your image :
+   
+   ```
+  docker run -td  -p80:80 --hostname=docker.gisgraphy.com  gisgraphydump bash
+   ```
 
 * Use Volume 
-  * create volumes on postgres data dir and Solr data dir
+  * create volumes on postgres data dir (/var/lib/postgresql/9.5/main) and Solr data dir (/usr/local/gisgraphy/solr/data) . see https://docs.docker.com/engine/admin/volumes/volumes/ for more infos.
+  
+  
   * build an image or use the one on dockerhub
   * cd to the dump directory and make the script runnable
   ```
