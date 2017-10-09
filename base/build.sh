@@ -1,4 +1,5 @@
 #!/bin/bash
 
-docker build -t gisgraphysql  --build-arg PGPASSWORD=mdppostgres .
+docker build -t gisgraphyofficial  --build-arg PGPASSWORD=mdppostgres .
+
 
