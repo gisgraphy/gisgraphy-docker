@@ -48,4 +48,4 @@ psql -Upostgres -h127.0.0.1 -dgisgraphy -f /usr/local/gisgraphy/sql/resetdb.sql 
 sleep 500 && service postgresql stop && sleep 500
 
 #purge dump dir
-RUN rm -rf /usr/local/dump
+ rm -rf /usr/local/dump
