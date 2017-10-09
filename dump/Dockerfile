@@ -1,9 +1,10 @@
-FROM gisgraphypro
+ARG BASE_IMAGE=gisgraphyofficial
+FROM $BASE_IMAGE
 
 USER root
 
 ARG HOST_NAME=docker.gisgraphy.com
-ARG PGPASSWORD=mdpsdf99
+ARG PGPASSWORD=mdppostgres
 
 WORKDIR /usr/local/
 
