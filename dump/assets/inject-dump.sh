@@ -10,6 +10,17 @@ if [[ -z $1 ]]
                 PGPASSWORD=$1
         fi
 
+if [[ -z $2 ]]
+        then
+                echo "no solr_data_dir specify"
+                SOLR_DATA_DIR="/usr/local/gisgraphy/solr/data";
+        else
+                echo "using solr_data_dir provided $1"
+               SOLR_DATA_DIR=$2
+        fi
+
+
+
 cd /usr/local/
 
 #copy Dump files
@@ -17,7 +28,7 @@ mkdir /usr/local/dump
 
 #setup solr
 rm -rf /usr/local/solr/solr/data
-unzip /usr/local/dump/data.zip -d usr/local/solr/solr/data
+unzip /usr/local/dump/data.zip -d $SOLR_DATA_DIR
 
 #remove solr zipped files
 rm /usr/local/dump/data.zip
