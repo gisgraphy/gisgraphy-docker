@@ -107,7 +107,7 @@ First add your dump files in the directory dump/assets/dump. then you got two ch
   * You will get the data stored in the volume you will get data identical, each time you stop-start the container because data are stored in the volume (outside the images / container)
 
 ## without docker
-To inject the dump on a classical install without docker, you simply have to clone or download this repository, add your files in dump/assets/dump.
+To inject the dump on a classical install without docker, you simply have to clone or download this repository, add your files in /usr/local/dump/.
 then cd to the dump directory and run the script inject-dump.sh
 ```
 cd dump;chmod +x ./assets/inject-dump.sh;./assets/inject-dump.sh
