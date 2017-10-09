@@ -15,13 +15,11 @@ Even if it is out of the scope of Gisgraphy, we provide a script (install-docker
 
 # Images
 ## build
-We provide two images :
-* gisgraphyenv : which have Java and Postgres / postgis installed and the Gisgraphy Database created. This images is to be used as a "base" image if you want to install Gisgraphy by you own (in other directory, with specific options,...whatever). 
-* gisgraphysql : based on gisgraphyenv, it install Gisgraphy (in /usr/local) and setup the database (create the tables in the database, insert gisgraphy users, create indexes). it also create an entrypoint that start Postgres and Gisgraphy servers.
+We provide an image called gisgraphyofficial : which have Java and Postgres / postgis installed and the Gisgraphy Database created, it install Gisgraphy (in /usr/local) and setup the database (create the tables in the database, insert gisgraphy users, create indexes). it also create an entrypoint that start Postgres and Gisgraphy servers.
 
-An oficial image of gisgraphysql can be found at https://hub.docker.com/r/gisgraphy/gisgraphyofficial/
+An oficial image of gisgraphyofficial can be found at https://hub.docker.com/r/gisgraphy/gisgraphyofficial/
 
-for both images, you can personalize the Postgres password by specifying an arg :
+ you can personalize the Postgres password by specifying an arg :
 ```
 docker build -t gisgraphyenv --build-arg PGPASSWORD=mdppostgres .
 ```
@@ -30,13 +28,13 @@ A script build.sh is provided to build the images
 ## run
 To run your image in a container
 ```
-docker run -td   gisgraphysql bash
+docker run -td   gisgraphyofficial bash
 ```
 A script run.sh is provided to ease things
 
 To run your container and open a shell in it : 
 ```
-docker run -td   gisgraphysql bash
+docker run -td   gisgraphyofficial bash
 ```
 
 docker images=>DOCKERID
@@ -44,9 +42,9 @@ docker exec -t -i DOCKERID /bin/bash
 
 A script connect.sh take a docker container id as parameter and open a shell in it.
 
-for gisgraphysql you can personnalize the host at runtime :
+you can personnalize the host at runtime :
 
-docker run -td  -P --hostname=docker.gisgraphy.com  gisgraphysql bash
+docker run -td  -P --hostname=docker.gisgraphy.com  gisgraphyofficial bash
 
 # Volumes 
 
