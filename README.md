@@ -75,6 +75,7 @@ First add your dump files in the directory dump/assets/dump. then you got two ch
   ```
   docker build -t gisgraphydump --build-arg PGPASSWORD=mdppostgres --build-arg BASE_IMAGE=gisgraphyofficial .
   ```
+  note : that it can take a while (the first message 'Sending build context to Docker daemon..' can also take a while)
   
   * You will get an image named 'gisgraphydump' with the data.
   * If you want to export the container, you can optionnaly use the script named exportandcompresscontainer.sh
@@ -93,6 +94,8 @@ First add your dump files in the directory dump/assets/dump. then you got two ch
   ```
   docker build -t gisgraphydump --build-arg PGPASSWORD=mdppostgres --build-arg BASE_IMAGE=gisgraphyofficial .
   ```
+  note : that it can take a while (the first message 'Sending build context to Docker daemon..' can also take a while)
+  
   * You will get the data stored in the volume you will get data identical, each time you stop-start the container because data are stored in the volume (outside the images / container)
 
 ## without docker
