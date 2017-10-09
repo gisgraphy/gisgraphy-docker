@@ -15,8 +15,8 @@ if [[ -z $2 ]]
                 echo "no solr_data_dir specify"
                 SOLR_DATA_DIR="/usr/local/gisgraphy/solr/data";
         else
-                echo "using solr_data_dir provided $1"
-               SOLR_DATA_DIR=$2
+                echo "using solr_data_dir provided $2"
+                SOLR_DATA_DIR=$2
         fi
 
 
