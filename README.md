@@ -57,23 +57,52 @@ If you save your container after the import is done, you will have the data stor
 If you want to keep the log files, statistiques,and so on you have to use volumes.
 
 # Premium
-If you buy a dump of data, we provide you some tools to inject them. Once done, don't forget to do a new image and save the state of your container. A technical documentation is provided with the dump but here is the main lines :
+If you buy a dump of data, we provide you some tools to inject them. A technical documentation is provided with the dump but here is the main lines :
+
+## with docker
 
 To use the dump :
-* Use Volume :
-  * build an image or use the one on dockerhub
-  * copy the files in assets/dump.
-  * Run the script.
-  * You will get a container with the data.
-  * Save the image (if you don't you will loose all the imported data each time tou stop-start the container)
+First add your dump files in the directory dump/assets/dump. then you got two choices :
 
-* Don't use volume
+* Don't use volume :
+  * build an image or use the one on dockerhub
+  * Copy the files in dump/assets/dump.
+  * cd to the dump directory and make the script runnable
+  ```
+  cd dump;chmod +x *.sh
+  ```
+  * build the image (BASE_IMAGE is the name of your image)
+  ```
+  docker build -t gisgraphydump --build-arg PGPASSWORD=mdppostgres --build-arg BASE_IMAGE=gisgraphyofficial .
+  ```
+  
+  * You will get an image named 'gisgraphydump' with the data.
+  * If you want to export the container, you can optionnaly use the script named exportandcompresscontainer.sh
+  ```
+  ./exportandcompresscontainer.sh
+  ```
+
+* Use Volume 
   * create volumes on postgres data dir and Solr data dir
   * build an image or use the one on dockerhub
-  * run the bash script to inject it.
-  * You will get the data imported identical each time you stop-start the container because it is stored in the volume (outside the images / container)
+  * cd to the dump directory and make the script runnable
+  ```
+  cd dump;chmod +x *.sh
+  ```
+  * build the image (BASE_IMAGE is the name of your image)
+  ```
+  docker build -t gisgraphydump --build-arg PGPASSWORD=mdppostgres --build-arg BASE_IMAGE=gisgraphyofficial .
+  ```
+  * You will get the data stored in the volume you will get data identical, each time you stop-start the container because data are stored in the volume (outside the images / container)
 
+## without docker
+To inject the dump on a classical install without docker, you simply have to clone or download this repository, add your files in dump/assets/dump.
+then cd to the dump directory and run the script inject-dump.sh
+```
+cd dump;chmod +x ./assets/inject-dump.sh;./assets/inject-dump.sh
+```
 
+The inject-dump.sh script is the one that is executed in your container.
 
 
 
