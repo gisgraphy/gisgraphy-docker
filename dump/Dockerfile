@@ -10,8 +10,8 @@ WORKDIR /usr/local/
 
 #copy Dump files
 #RUN mkdir /usr/local/dump
-ADD ./assets/dump/data.zip /usr/local/dump/
-ADD ./assets/dump/dump_localhost.tar.bz2 /usr/local/dump/
+COPY ./assets/dump/data.zip /usr/local/dump/
+COPY ./assets/dump/dump_localhost.tar.bz2 /usr/local/dump/
 
 #add script
 ADD ./assets/inject-dump.sh /usr/local/dump/inject-dump.sh

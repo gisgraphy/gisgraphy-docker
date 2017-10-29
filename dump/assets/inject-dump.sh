@@ -22,16 +22,16 @@ if [[ -z $2 ]]
 
 
 cd /usr/local/
-
+export  DEBIAN_FRONTEND=noninteractive;
 #copy Dump files
 mkdir /usr/local/dump
-
+apt-get install -y bzip2
 #decompress sql
 cd /usr/local/dump/
 tar xjvf dump_localhost.tar.bz2
 # remove zipped sql
+echo "removint bz2 file"
 rm /usr/local/dump/dump_localhost.tar.bz2
-
 #inject sql
 service postgresql stop && sleep 20;
 export PGPASSWORD=$PGPASSWORD && \
