@@ -7,4 +7,4 @@ else
 	DOCKERID=$1
 fi
 
-docker exec -t -i $DOCKERID /bin/bash
+docker stop $DOCKERID 
