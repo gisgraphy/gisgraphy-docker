@@ -30,7 +30,7 @@ apt-get install -y bzip2
 cd /usr/local/dump/
 tar xjvf dump_localhost.tar.bz2
 # remove zipped sql
-echo "removint bz2 file"
+echo "removing bz2 file"
 rm /usr/local/dump/dump_localhost.tar.bz2
 #inject sql
 service postgresql stop && sleep 20;
@@ -42,13 +42,16 @@ psql -Upostgres -h127.0.0.1 -dgisgraphy -f /usr/local/gisgraphy/sql/resetdb.sql 
 sleep 500 && service postgresql stop && sleep 500
 
 #purge dump dir
+echo "purging postgres dir"
 rm -rf /usr/local/dump/dump_localhost.dir/
 
 
 #setup solr
 rm -rf $SOLR_DIR/data
+echo "deziping solr"
 unzip /usr/local/dump/data.zip -d $SOLR_DIR
 
 #remove solr zipped files
+echo "cleaning solr"
 rm /usr/local/dump/data.zip
 

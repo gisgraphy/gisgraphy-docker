@@ -19,7 +19,7 @@ RUN chmod +x /usr/local/dump/inject-dump.sh
 RUN /usr/local/dump/inject-dump.sh $PGPASSWORD $SOLR_DIR
 
 
-RUN   service postgresql start; service gisgraphy start; netstat -tnlp 2>&1| grep 8080 > /dev/null; while [ $? -eq 1 ]; do   sleep 5 ;echo "not already started...waiting";netstat -tnlp 2>&1| grep 8080 > /dev/null; done;echo "gisgraphy is started" service gisgraphy stop ; sleep 60;  service postgresql stop;sleep 60;
+#RUN   service postgresql start; service gisgraphy start; netstat -tnlp 2>&1| grep 8080 > /dev/null; while [ $? -eq 1 ]; do   sleep 5 ;echo "not already started...waiting";netstat -tnlp 2>&1| grep 8080 > /dev/null; done;echo "gisgraphy is started" service gisgraphy stop ; sleep 60;  service postgresql stop;sleep 60;
 
 
 
