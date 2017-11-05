@@ -28,17 +28,17 @@ mkdir /usr/local/dump
 apt-get install -y bzip2
 #decompress sql
 cd /usr/local/dump/
-tar xjvf dump_localhost.tar.bz2
+#tar xjvf dump_localhost.tar.bz2
 # remove zipped sql
-echo "removing bz2 file"
-rm /usr/local/dump/dump_localhost.tar.bz2
+#echo "removing bz2 file"
+#rm /usr/local/dump/dump_localhost.tar.bz2
 #inject sql
 service postgresql stop && sleep 20;
 export PGPASSWORD=$PGPASSWORD && \
  service postgresql start && \
 sleep 10 && \
 psql -Upostgres -h127.0.0.1 -dgisgraphy -f /usr/local/gisgraphy/sql/resetdb.sql && \
-/usr/bin/pg_restore  -h 127.0.0.1 -p 5432 -U postgres -j 8 -Fd -O -v -dgisgraphy /usr/local/dump/dump_localhost.dir || echo "import done"
+/usr/bin/pg_restore  -h 127.0.0.1 -p 5432 -U postgres  -Fc -O -v -dgisgraphy /usr/local/dump/dump_localhost.gz || echo "import done"
 sleep 500 && service postgresql stop && sleep 500
 
 #purge dump dir
@@ -53,5 +53,5 @@ unzip /usr/local/dump/data.zip -d $SOLR_DIR
 
 #remove solr zipped files
 echo "cleaning solr"
-rm /usr/local/dump/data.zip
-
+#rm /usr/local/dump/data.zip
+echo "end of inject"
