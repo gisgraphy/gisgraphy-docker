@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 function exitIfFails {
 if  [[ $? != 0 ]] 
 		then
@@ -32,48 +34,54 @@ if [ ! -f ./assets/gisgraphy/gisgraphy-latest.zip ]; then
 fi
 
 
-export DEBIAN_FRONTEND=noninteractive
-echo "coping environement install script"
-cp ./assets/install-env.sh /usr/local/install-env.sh
-
-echo "make environement install script executable"
-chmod +x /usr/local/install-env.sh
-
-echo "running environement install script"
-/usr/local/install-env.sh $PGPASSWORD
-exitIfFails "install environnement fails"
-echo "cleaning"
-rm /usr/local/install-env.sh
+read -r -p "This will install gisgraphy, Are you sure? [Y/n]" response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
 
 
+	export DEBIAN_FRONTEND=noninteractive
+	echo "coping environement install script"
+	cp ./assets/install-env.sh /usr/local/install-env.sh
 
-#app
-echo "copying Gisgraphy"
-cp ./assets/gisgraphy/gisgraphy-latest.zip /usr/local/gisgraphy.zip
-echo "copying gisgraphy installation script"
-cp ./assets/install-gisgraphy.sh /usr/local/install-gisgraphy.sh
-echo "making gisgraphy installation script executable"
-chmod +x /usr/local/install-gisgraphy.sh
-echo "installing Gisgraphy"
-/usr/local/install-gisgraphy.sh $PGPASSWORD
-exitIfFails "install Gisgraphy fails"
-echo "installing Gisgraphy...done"
-#clean
-echo "cleaning"
-rm /usr/local/install-gisgraphy.sh
+	echo "make environement install script executable"
+	chmod +x /usr/local/install-env.sh
 
-echo "starting postgres"
-service postgresql start
+	echo "running environement install script"
+	/usr/local/install-env.sh $PGPASSWORD
+	exitIfFails "install environnement fails"
+	echo "cleaning"
+	rm /usr/local/install-env.sh
 
-echo "************************************************************"
-echo "installation complete you can now launch it :"
-echo "cd /usr/local/gisgraphy;chmod +x *.sh;./launch.sh"
-echo " "
-echo "Then open a browser and go to http://localhost:8080/"
-echo " "
-echo "You can then import data or order some premium dump on https://premium.gisgraphy.com/"
-echo "enjoy !"
-echo "************************************************************"
 
+
+	#app
+	echo "copying Gisgraphy"
+	cp ./assets/gisgraphy/gisgraphy-latest.zip /usr/local/gisgraphy.zip
+	echo "copying gisgraphy installation script"
+	cp ./assets/install-gisgraphy.sh /usr/local/install-gisgraphy.sh
+	echo "making gisgraphy installation script executable"
+	chmod +x /usr/local/install-gisgraphy.sh
+	echo "installing Gisgraphy"
+	/usr/local/install-gisgraphy.sh $PGPASSWORD
+	exitIfFails "install Gisgraphy fails"
+	echo "installing Gisgraphy...done"
+	#clean
+	echo "cleaning"
+	rm /usr/local/install-gisgraphy.sh
+
+	echo "starting postgres"
+	service postgresql start
+
+	echo "************************************************************"
+	echo "installation complete you can now launch it :"
+	echo "cd /usr/local/gisgraphy;chmod +x *.sh;./launch.sh"
+	echo " "
+	echo "Then open a browser and go to http://localhost:8080/"
+	echo " "
+	echo "You can then import data or order some premium dump on https://premium.gisgraphy.com/"
+	echo "enjoy !"
+	echo "************************************************************"
+
+fi
 
 
