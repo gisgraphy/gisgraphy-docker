@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker run -td  -p80:80 --hostname=docker.gisgraphy.com  gisgraphydump bash
+docker run -td  -p80:8080 --hostname=docker.gisgraphy.com  gisgraphydump bash
 
