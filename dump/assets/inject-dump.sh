@@ -43,7 +43,7 @@ sleep 500 && service postgresql stop && sleep 500
 
 #purge dump dir
 echo "purging postgres dir"
-rm -rf /usr/local/dump/dump_localhost.dir/
+rm -rf /usr/local/dump/dump_localhost.gz
 
 
 #setup solr
@@ -53,5 +53,5 @@ unzip /usr/local/dump/data.zip -d $SOLR_DIR
 
 #remove solr zipped files
 echo "cleaning solr"
-#rm /usr/local/dump/data.zip
+rm /usr/local/dump/data.zip
 echo "end of inject"
