@@ -55,7 +55,10 @@ if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
 
 
 	#app
-	echo "copying Gisgraphy"
+	mkdir -p ./assets/gisgraphy/
+	echo "Checking if Gisgraphy package is present"
+	if [ ! -e ./assets/gisgraphy/gisgraphy-latest.zip ]; then echo "Downloading Gisgraphy"; wget http://download.gisgraphy.com/releases/gisgraphy-latest.zip -P ./assets/gisgraphy/; fi
+        echo "copying Gisgraphy"
 	cp ./assets/gisgraphy/gisgraphy-latest.zip /usr/local/gisgraphy.zip
 	echo "copying gisgraphy installation script"
 	cp ./assets/install-gisgraphy.sh /usr/local/install-gisgraphy.sh
