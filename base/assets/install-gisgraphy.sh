@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+if [ ! "$(grep -Ei 'debian|buntu|mint' /etc/*release)" ]; then  echo "this script is only designed to be run on Debian/Ubuntu/Mint"; exit 1; fi
+
 if [[ -z $1 ]]
         then
                 echo "no password specify"

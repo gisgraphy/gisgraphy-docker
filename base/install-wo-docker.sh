@@ -10,7 +10,7 @@ if  [[ $? != 0 ]]
 fi
 }
 
-
+if [ ! "$(grep -Ei 'debian|buntu|mint' /etc/*release)" ]; then  echo "this script is only designed to be run on Debian/Ubuntu/Mint"; exit 1; fi
 
 if [ `id -u` != 0 ]; then
         echo "you must run this script as root. Please re run the script prefixed by sudo or log as root "
@@ -34,7 +34,7 @@ if [ ! -f ./assets/gisgraphy/gisgraphy-latest.zip ]; then
 fi
 
 
-read -r -p "This will install gisgraphy, Are you sure? [Y/n]" response
+read -r -p "This will install Postgres, Postgis, Java (Oracle) and Gisgraphy, Are you sure? [Y/n]" response
 response=${response,,} # tolower
 if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
 
