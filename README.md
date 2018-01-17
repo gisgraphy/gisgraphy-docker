@@ -5,10 +5,13 @@
 We always try to ease the installation. We provide several Docker images for you to run Gisgraphy easily. All this stuff is given "as is" and with any waranty of any kind. This repository doesn't contain Docker images. Images are availables on Dockerhub at https://hub.docker.com/r/gisgraphy/gisgraphyofficial/
 
 * [Install Docker](#Install-Docker)
-* [Directories] (#Directories)
+* [Directories](#Directories)
 * [Images](#Images)
 * [Volumes](#Volumes)
 * [Premium](#premium)
+
+
+For those who want to install Gisgraphy without Docker, we have a [dedicated installation page](https://www.gisgraphy.com/documentation/installation/index.php)
 
 # Install Docker
 
