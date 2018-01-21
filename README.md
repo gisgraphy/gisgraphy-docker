@@ -1,6 +1,4 @@
 
-/!\ this repo is still in draft
-
 
 We always try to ease the installation. We provide several Docker images for you to run Gisgraphy easily. All this stuff is given "as is" and with any waranty of any kind. This repository doesn't contain Docker images. Images are availables on Dockerhub at https://hub.docker.com/r/gisgraphy/gisgraphyofficial/
 
@@ -50,8 +48,9 @@ docker run -td  gisgraphyofficial bash
 A script connect.sh take a docker container id as parameter and open a shell in it. If no container id is given, then it try to connect to a running container; if there is multiple container running. It fails.
 
 you can personnalize the host at runtime :
-
+```
 docker run -td  -P --hostname=docker.gisgraphy.com  gisgraphyofficial bash
+```
 
 # Volumes 
 
@@ -80,7 +79,7 @@ First add your dump files in the directory dump/assets/dump. Then you got two ch
   ```
   * build the image (BASE_IMAGE is the name of your image)
   ```
- ./build.sh
+  ./build.sh
   ```
   note : that it can take a while (the first message 'Sending build context to Docker daemon..' can also take a while)
   
