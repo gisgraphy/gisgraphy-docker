@@ -14,7 +14,7 @@ if [[ -z $1 ]]
 
 cd /usr/local/
 apt-get update && \
-      apt-get -y install -y htop net-tools vim psmisc unzip
+      apt-get -y install -y htop net-tools vim psmisc unzip  locales
 
 unzip /usr/local/gisgraphy.zip -d /usr/local/gisgraphy/
 cp -r /usr/local/gisgraphy/gisgraphy-5.0-beta1/* /usr/local/gisgraphy/

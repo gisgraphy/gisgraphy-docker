@@ -15,13 +15,22 @@ if [[ -z $1 ]]
 
 apt-get update && \
       apt-get -y install apt-utils
-apt-get -y install sudo apt-utils python-software-properties python3-software-properties software-properties-common bash apt-utils
+apt-get -y install sudo apt-utils python-software-properties python3-software-properties software-properties-common bash apt-utils wget
 
-add-apt-repository -y  ppa:webupd8team/java
-apt-get update
-echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-apt-get install -y oracle-java8-installer sudo
+#add-apt-repository -y  ppa:webupd8team/java
+#apt-get update
+#echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+#echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+#
+#apt-get install -y oracle-java8-installer sudo
+wget --header "Cookie: oraclelicense=accept-securebackup-cookie" https://edelivery.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jdk-8u162-linux-x64.tar.gz
+
+mkdir /opt/jdk
+
+sudo tar -zxf jdk-8u162-linux-x64.tar.gz -C /opt/jdk
+update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_162/bin/java 
+
+
 
 # postgres
 apt-get install -y postgresql-9.5
