@@ -4,7 +4,10 @@ We always try to ease the installation. We provide several Docker images for you
 
 * [Install Docker](#Install-Docker)
 * [Directories](#Directories)
-* [Images](#Images)
+* [For people in a hurry](#For-people-in-a-hurry)
+* [Get image from Dockerhub](#Get-image-from-Docker-hub)
+* [Build your own image](#Build-your-own-image)
+* [Start a container](#Start-a-container)
 * [Volumes](#Volumes)
 * [Premium](#premium)
 
@@ -22,8 +25,22 @@ There is Two directories :
 
 Both directories contains script (installation, inject dump,...) that can be run in a Docker container or not (the script named *-wo-docker.sh' can be run in a classic Linux distribution (Debian / Ubuntu)
 
-# Images
-## build
+# For people in a hurry
+For those who want to go fast :
+```
+git clone https://github.com/gisgraphy/gisgraphy-docker.git && cd gisgraphy-docker && ./install-docker.sh && ./get_and_run.sh
+```
+
+
+# Get image from Docker hub
+you can get an existing images from [Docker hub](https://hub.docker.com/r/gisgraphy/gisgraphyofficial/). to get it :
+
+```
+docker pull gisgraphy/gisgraphyofficial
+```
+
+
+# Build your own image
 We provide an image called gisgraphyofficial : which have Java and Postgres / postgis installed and the Gisgraphy Database created, it install Gisgraphy (in /usr/local) and setup the database (create the tables in the database, insert gisgraphy users, create indexes). It also create an entrypoint that start Postgres and Gisgraphy servers.
 
 An oficial image of gisgraphyofficial can be found at https://hub.docker.com/r/gisgraphy/gisgraphyofficial/
@@ -34,23 +51,21 @@ docker build -t gisgraphyenv --build-arg PGPASSWORD=mdppostgres .
 ```
 A script build.sh is provided to build the image. It download the Gisgraphy latest version and build the image.
 
-## run
+# Start a container
+
 To run your image in a container
 ```
-docker run -td   gisgraphyofficial bash
+docker run -td -p80:8080 --hostname=myhost.com gisgraphyofficial bash
 ```
-The script run.sh is provided to ease things
+note : a script called 'run.sh' in the base direcory do the job.
 
-To run your container and open a shell in it : 
-```
-docker run -td  gisgraphyofficial bash
-```
-A script connect.sh take a docker container id as parameter and open a shell in it. If no container id is given, then it try to connect to a running container; if there is multiple container running. It fails.
 
-you can personnalize the host at runtime :
+To open a bash console in your container : 
 ```
-docker run -td  -P --hostname=docker.gisgraphy.com  gisgraphyofficial bash
+docker exec -t -i $DOCKERID /bin/bash
 ```
+A script called 'connect.sh' take a docker container id as parameter and open a shell in it. If no container id is given, then it try to connect to a running container; if there is multiple container running. It fails.
+
 
 # Volumes 
 
@@ -71,17 +86,17 @@ To use the dump :
 First add your dump files in the directory dump/assets/dump. Then you got two choices :
 
 * Don't use volume :
-  * build an image or use the one on dockerhub
-  * Copy the files in dump/assets/dump.
+  * build an image or use the one on Docker hub
+  * Copy the dump files in dump/assets/dump.
   * cd to the dump directory and make the script runnable
   ```
-  cd dump;chmod +x *.sh;cd ..
+  cd dump;chmod +x *.sh;
   ```
   * build the image (BASE_IMAGE is the name of your image)
   ```
   ./build.sh
   ```
-  note : that it can take a while (the first message 'Sending build context to Docker daemon..' can also take a while)
+  Note : that it can take a while (the first message 'Sending build context to Docker daemon..' can also take a while)
   
   * You will get an image named 'gisgraphydump' with the data in it.
   * If you want to export the container, you can optionnaly use the script named exportandcompresscontainer.sh
@@ -113,10 +128,10 @@ First add your dump files in the directory dump/assets/dump. Then you got two ch
   * You will get the data stored in the volume you will get data identical, each time you stop-start the container because data are stored in the volume (outside the images / container)
 
 ## without docker
-To inject the dump on a classical install (without docker), you simply have to clone or download this repository, add your files in /usr/local/dump/.
+To inject the dump on a classical install (without Docker), you simply have to clone or download this repository, add your files in /usr/local/dump/.
 then cd to the dump directory and run :
 ```
-chmod +x *.sh;cd dump;chmod +x ./assets/inject-dump.sh;cd ..;./inject-wo-docker.sh
+chmod +x ./assets/inject-dump.sh;chmod +x *.sh ; ./inject-wo-docker.sh
 ```
 
 
