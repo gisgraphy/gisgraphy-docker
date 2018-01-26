@@ -25,5 +25,6 @@ apt-cache madison docker-ce
 systemctl enable docker
 #update-rc.d docker defaults
 docker --version
-systemctl status docker
+if  [[ $? != 0 ]] ;then echo "docker is not install...exiting";exit 1; fi
+#systemctl status docker
 #service docker status
