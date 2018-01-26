@@ -2,14 +2,14 @@
 
 We always try to ease the installation. We provide several Docker images for you to run Gisgraphy easily. All this stuff is given "as is" and with any waranty of any kind. This repository doesn't contain Docker images. Images are availables on Dockerhub at https://hub.docker.com/r/gisgraphy/gisgraphyofficial/
 
-* [Install Docker](#Install-Docker)
-* [Directories](#Directories)
-* [For people in a hurry](#For-people-in-a-hurry)
-* [Get image from Dockerhub](#Get-image-from-Docker-hub)
-* [Build your own image](#Build-your-own-image)
-* [Start a container](#Start-a-container)
-* [Volumes](#Volumes)
-* [Premium](#premium)
+* [Install Docker](#user-content-install-docker)
+* [Directories](#user-content-directories)
+* [For people in a hurry](#user-content-for-people-in-a-hurry)
+* [Get image from Dockerhub](#user-content-get-image-from-docker-hub)
+* [Build your own image](#user-content-build-your-own-image)
+* [Start a container](#user-content-start-a-container)
+* [Volumes](#user-content-volumes)
+* [Premium](#user-content-premium)
 
 
 For those who want to install Gisgraphy without Docker, we have a [dedicated installation page](https://www.gisgraphy.com/documentation/installation/index.php)
@@ -26,9 +26,10 @@ There is Two directories :
 Both directories contains script (installation, inject dump,...) that can be run in a Docker container or not (the script named *-wo-docker.sh' can be run in a classic Linux distribution (Debian / Ubuntu)
 
 # For people in a hurry
-For those who want to go fast :
+For those who want to go fast and get ready in 2 minuts:
 ```
-git clone https://github.com/gisgraphy/gisgraphy-docker.git && cd gisgraphy-docker && ./install-docker.sh && ./get_and_run.sh
+docker pull gisgraphy/gisgraphyofficial  && docker run -ti -p80:8080 --hostname=myhost.com gisgraphy/gisgraphyofficial bash
+
 ```
 
 
