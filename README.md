@@ -31,7 +31,7 @@ For those who want to go fast and get ready in 2 minuts:
 git clone https://github.com/gisgraphy/gisgraphy-docker.git && cd gisgraphy-docker && ./install-docker.sh && ./get_and_run.sh
 
 ```
-Then go to http://localhost:80/
+Then go to http://localhost/
 
 # Get image from Docker hub
 you can get an existing images from [Docker hub](https://hub.docker.com/r/gisgraphy/gisgraphyofficial/). to get it :
