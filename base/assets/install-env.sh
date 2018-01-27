@@ -28,6 +28,7 @@ wget --header "Cookie: oraclelicense=accept-securebackup-cookie" https://edelive
 mkdir /opt/jdk
 
 sudo tar -zxf jdk-8u162-linux-x64.tar.gz -C /opt/jdk
+rm jdk-8u162-linux-x64.tar.gz
 update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_162/bin/java 
 
 
