@@ -22,13 +22,14 @@ apt-get -y install sudo apt-utils python-software-properties python3-software-pr
 #echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 #echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
 #
-#apt-get install -y oracle-java8-installer sudo
+apt-get install -y sudo
+#apt-get install -y oracle-java8-installer 
 wget --header "Cookie: oraclelicense=accept-securebackup-cookie" https://edelivery.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jdk-8u162-linux-x64.tar.gz
 
 mkdir /opt/jdk
 
 sudo tar -zxf jdk-8u162-linux-x64.tar.gz -C /opt/jdk
-update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_162/bin/java 
+iupdate-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_162/bin/java  100
 
 
 
