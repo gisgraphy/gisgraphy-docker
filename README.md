@@ -26,11 +26,15 @@ There is Two directories :
 Both directories contains script (installation, inject dump,...) that can be run in a Docker container or not (the script named *-wo-docker.sh' can be run in a classic Linux distribution (Debian / Ubuntu)
 
 # For people in a hurry
-For those who want to go fast and get ready in 2 minuts:
+For those who want to go fast and get ready in 2 minuts : get a Docker image of Gisgraphy (this step has to be done only once) ::
 ```
-git clone https://github.com/gisgraphy/gisgraphy-docker.git && cd gisgraphy-docker && ./install-docker.sh && ./get_and_run.sh
+git clone https://github.com/gisgraphy/gisgraphy-docker.git && cd gisgraphy-docker && ./install-docker.sh && cd base && ./get_from_dockerhub.sh
+```
+..and run a container (do this step each time you want to run a container)
+```
+./run.sh
+```
 
-```
 Then go to http://localhost/
 
 # Get image from Docker hub
@@ -39,7 +43,6 @@ you can get an existing images from [Docker hub](https://hub.docker.com/r/gisgra
 ```
 docker pull gisgraphy/gisgraphyofficial
 ```
-
 
 # Build your own image
 We provide an image called gisgraphyofficial : which have Java and Postgres / postgis installed and the Gisgraphy Database created, it install Gisgraphy (in /usr/local) and setup the database (create the tables in the database, insert gisgraphy users, create indexes). It also create an entrypoint that start Postgres and Gisgraphy servers.
