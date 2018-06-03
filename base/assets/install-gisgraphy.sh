@@ -17,8 +17,8 @@ apt-get update && \
       apt-get -y install -y htop net-tools vim psmisc unzip  locales
 
 unzip /usr/local/gisgraphy.zip -d /usr/local/gisgraphy/
-cp -r /usr/local/gisgraphy/gisgraphy-5.0-beta1/* /usr/local/gisgraphy/
-rm -rf /usr/local/gisgraphy/gisgraphy-5.0-beta1/*
+cp -r /usr/local/gisgraphy/gisgraphy-5.0-beta3/* /usr/local/gisgraphy/
+rm -rf /usr/local/gisgraphy/gisgraphy-5.0-beta3/*
 rm  /usr/local/gisgraphy.zip
 sed -i "s/password=/password=$PGPASSWORD/g" /usr/local/gisgraphy/webapps/ROOT/WEB-INF/classes/jdbc.properties
 
