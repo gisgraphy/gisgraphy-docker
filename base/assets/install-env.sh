@@ -70,6 +70,9 @@ psql -U postgres -h 127.0.0.1 -c "CREATE DATABASE gisgraphy ENCODING = 'UTF8';"
 psql -U postgres -h 127.0.0.1 -d gisgraphy -f /usr/share/postgresql/9.5/contrib/postgis-2.2/postgis.sql
 psql -U postgres -h 127.0.0.1 -d gisgraphy -f /usr/share/postgresql/9.5/contrib/postgis-2.2/spatial_ref_sys.sql
 
+#psql -U postgres -h 127.0.0.1 -d gisgraphy -f /usr/share/postgresql/10/contrib/postgis-2.4/postgis.sql
+#psql -U postgres -h 127.0.0.1 -d gisgraphy -f /usr/share/postgresql/10/contrib/postgis-2.4/spatial_ref_sys.sql
+
 /etc/init.d/postgresql stop && sleep 20;
 
 apt-get -y install -y htop net-tools vim psmisc unzip
