@@ -42,10 +42,14 @@ update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_202/bin/java 
 
 
 # postgres
+#on ubuntu 16.04
 apt-get install -y postgresql-9.5
 apt-get install -y  postgresql-contrib-9.5
-
 apt-get install -y postgis postgresql-9.5-postgis-2.2
+
+#on ubuntu 18.04 and later
+#apt-get install postgresql-10 postgis postgresql-10-postgis-2.4 postgresql-contrib
+
 
 /etc/init.d/postgresql start
 
