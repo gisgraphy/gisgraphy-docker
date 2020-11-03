@@ -28,10 +28,7 @@ if [[ -z $1 ]]
                 PGPASSWORD=$1
 fi
 
-if [ ! -f ./assets/gisgraphy/gisgraphy-latest.zip ]; then
-    echo "please download the latest gisgraphy version 'gisgraphy-latest.zip' and put it in ./assets/gisgraphy/ directory"
-    exit 1
-fi
+
 
 
 read -r -p "This will install Postgres, Postgis, Java (Oracle) and Gisgraphy, Are you sure? [Y/n]" response
