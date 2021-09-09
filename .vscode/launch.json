@@ -6,9 +6,27 @@
     "configurations":
 
 
-        [{
+        [
+            {
+                "name": "Launch Chrome",
+                "request": "launch",
+                "type": "pwa-chrome",
+                "url": "http://localhost:8080",
+                "webRoot": "${workspaceFolder}"
+            },
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Launch Chrome",
+                "url": "http://localhost:8080",
+                "webRoot": "${workspaceFolder}"
+            },
+
+            {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app.js",
+            "program": "${workspaceFolder}/
+
+        ",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
