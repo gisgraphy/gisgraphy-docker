@@ -14,7 +14,8 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"ms-azuretools.vscode-azurestorage",
-		"ms-kubernetes-tools.vscode-kubernetes-tools"
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"hyunkyunmoon.gzipdecompressor"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
