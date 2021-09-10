@@ -1,0 +1,277 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations":
+
+
+        [
+            {
+                "name": "PowerShell Launch Current File",
+                "type": "PowerShell",
+                "request": "launch",
+                "script": "${file}",
+                "cwd": "${workspaceFolder}"
+            },
+
+
+
+
+            {
+                "name": ".NET Core Attach",
+                "type": "coreclr",
+                "request": "attach"
+
+
+                "name": "Attach to Chrome",
+                "port": 9222,
+                "request": "attach",
+                "type": "pwa-chrome",
+                "webRoot": "${workspaceFolder}"
+            },
+
+            {
+                "type": "java",
+                "name": "Attach to Remote Program",
+                "request": "attach",
+                "hostName": "<The host name or ip address of remote debuggee>",
+                "port": "<debug port of remote debuggee>"
+            },
+            {
+                "name": "Attach to Kubernetes Pod (Go)",
+                "type": "cloudcode.kubernetes",
+                "request": "attach",
+                "language": "Go",
+                "debugPort": 2345,
+                "podSelector": {
+                    "app": "deployment-name"
+                },
+                "localRoot": "${workspaceFolder}",
+                "remoteRoot": "Path to the Remote Directory Containing the Program"
+            },
+            {
+                "name": "Attach to Chrome",
+                "port": 9222,
+                "request": "attach",
+                "type": "pwa-chrome",
+                "webRoot": "${workspaceFolder}"
+            },
+            {
+                "name": "Launch Program",
+                "program": "${workspaceFolder}/app.js",
+                "request": "launch",
+                "skipFiles": [
+                    "<node_internals>/**"
+                ],
+                "type": "pwa-node"
+            },
+            {
+                "name": "Attach by Process ID",
+                "processId": "${command:PickProcess}",
+                "request": "attach",
+                "skipFiles": [
+                    "<node_internals>/**"
+                ],
+                "type": "pwa-node"
+            },
+            {
+                "name": "Launch Chrome",
+                "request": "launch",
+                "type": "pwa-chrome",
+                "url": "http://localhost:8080",
+                "webRoot": "${workspaceFolder}"
+            },
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Launch Chrome",
+                "url": "http://localhost:8080",
+                "webRoot": "${workspaceFolder}"
+            },
+
+            {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/
+
+        ",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {
+                "name": ".NET Core Launch (console)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+                "console": "internalConsole"
+            },
+
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Launch Chrome",
+                "url": "http://localhost:8080",
+                "webRoot": "${vscode://vscode.github-authentication/did-authenticate?windowid=1&code=1e2f1ccc90959a4aaea5&state=7b06aa4f-c892-444c-8aeb-85e47931600b}"
+            },
+            {
+                "name": ".NET Core Launch (web)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+                "args": [],
+                "cwd": "$git clone https://github.com/gisgraphy/gisgraphy-docker.git && cd gisgraphy-docker && ./install-docker.sh && cd base && ./get_from_dockerhub.sh
+{workspaceFolder}",
+                "stopAtEntry": false,
+                "serverReadyAction": {
+                    "action": "openExternally",
+                    "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+                },
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                },
+                "sourceFileMap": {
+                    "/Views": "${workspaceFolder}/Views"
+                }
+            },
+            {
+                "name": ".NET Core Launch (console)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${workspaceFolder}/bin/Debug/<http//localhost/.>/<project-name.dll>",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+                "console": "internalConsole",
+                "pipeTransport": {
+                    "pipeCwd": "${workspaceFolder}",
+                    "pipeProgram": "enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'",
+                    "pipeArgs": [],
+                    "debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
+                }
+            },
+
+
+
+
+
+            {
+                "name": ".NET Core Attach",
+                "type": "coreclr",
+                "request": "attach",
+                "pipeTransport": {
+                    "pipeCwd": "${workspaceFolder}",
+                    "pipeProgram": "https://hub.docker.com/r/gisgraphy/gisgraphyofficial/",
+                    "pipeArgs": [],
+                    "debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
+                }
+            },
+            {
+                "name": ".NET Core Launch (console)",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+                "console": "internalConsole"
+            },
+            {
+                "name": ".NET Core Attach",
+                "type": "coreclr",
+                "request": "attach"
+            }
+
+
+
+
+        ]
+            "name": "PowerShell: Launch Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}"
+        }
+    ]docker build -t gisgraphyenv --build-arg PGPASSWORD=mdppostgres .
+
+}docker run -td -p80:8080 --hostname=myhost.com gisgraphyofficial bash
