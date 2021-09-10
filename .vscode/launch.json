@@ -8,6 +8,45 @@
 
         [
             {
+                "name": ".NET Core Attach",
+                "type": "coreclr",
+                "request": "attach"
+            
+            {
+                "name": "Attach to Chrome",
+                "port": 9222,
+                "request": "attach",
+                "type": "pwa-chrome",
+                "webRoot": "${workspaceFolder}"
+            },
+
+            {
+                "type": "java",
+                "name": "Attach to Remote Program",
+                "request": "attach",
+                "hostName": "<The host name or ip address of remote debuggee>",
+                "port": "<debug port of remote debuggee>"
+            },
+            {
+                "name": "Attach to Kubernetes Pod (Go)",
+                "type": "cloudcode.kubernetes",
+                "request": "attach",
+                "language": "Go",
+                "debugPort": 2345,
+                "podSelector": {
+                    "app": "deployment-name"
+                },
+                "localRoot": "${workspaceFolder}",
+                "remoteRoot": "Path to the Remote Directory Containing the Program"
+            },
+            {
+                "name": "Attach to Chrome",
+                "port": 9222,
+                "request": "attach",
+                "type": "pwa-chrome",
+                "webRoot": "${workspaceFolder}"
+            },
+            {
                 "name": "Launch Program",
                 "program": "${workspaceFolder}/app.js",
                 "request": "launch",
